@@ -1,6 +1,9 @@
 {
     "extends": "airbnb",
     "rules": {
-       "no-set-state": "off"
+       "no-set-state": "off",
+       "indent": ["error", 4],
+       "no-alert": "off",
+       "no-console": "off",
     }
 }
