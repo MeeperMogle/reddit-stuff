@@ -19,6 +19,7 @@ sidebar.initiateToggle();
 redditUtils.hideElements();
 redditUtils.formatTimestamps();
 subredditIcons.initiateIcons();
+redditUtils.opacityDown();
 
 if (isAt('w68')) {
     // Remove duplicate image links
@@ -30,3 +31,15 @@ if (isAt('w68')) {
 
     hideAllTopics(titleHiders.w68);
 }
+
+// debug closing reasons
+// custom no-contribution subreddits
+// native no-contributions-enforcement
+// nc: no replies, no voting, no reporting, ...
+// error code: 50       refresh interval
+// hide comments containing certain word
+// hide comment trees of deleted / removed comments?
+// remove "reply"-links to comments > 1 day
+// remove reply-textbox in threads > 1 day
+// completely remove Ignored users' posts and topics
+// subreddit: auto-set filter options
