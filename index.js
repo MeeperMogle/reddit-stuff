@@ -1,5 +1,2 @@
-'use strict';
+const $ = require('jquery');
 
-// var $ = require('jquery');
-
-alert('Userscript loaded successfully!');
