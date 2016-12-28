@@ -13,11 +13,12 @@ module.exports = {
         });
     },
     hideElements() {
-        const elementSelectors = ['.score', '.userkarma'];
+        const elementSelectors = ['.score', '.userkarma', '.karma', '.del-button'];
         $(elementSelectors.join(', ')).hide();
     },
     opacityDown() {
-
+        const elementSelectors = ['.post-sharing-button', '.redditSingleClick', '.report-button', '.give-gold'];
+        $(elementSelectors.join(', ')).css('opacity', '0.2');
     },
     formatTimestamps() {
         // http://userstyles.org/styles/77357
@@ -44,7 +45,7 @@ module.exports = {
         })();
 
         $("time").each(function () {
-    this.setAttribute('title', new Date(this.getAttribute('datetime')).toISOString().split("T")[1].split(".")[0]);
-});
+            this.setAttribute('title', new Date(this.getAttribute('datetime')).toISOString().split("T")[1].split(".")[0]);
+        });
     },
 };
