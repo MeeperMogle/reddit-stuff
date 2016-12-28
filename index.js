@@ -42,4 +42,7 @@ if (isAt('w68')) {
 // remove "reply"-links to comments > 1 day
 // remove reply-textbox in threads > 1 day
 // completely remove Ignored users' posts and topics
+// - personal shadowbanner; localStorage
+// - when seeing an Ignored user, add it if necessary
+// - export as csv, insert as csv
 // subreddit: auto-set filter options
