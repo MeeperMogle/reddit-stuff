@@ -8,15 +8,16 @@
 // @noframes
 // @grant        GM_xmlhttpRequest
 // @connect      localhost
+// @require    https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     GM_xmlhttpRequest({
         method: 'GET',
         url: 'http://localhost:8080/bundle.js',
-        onload: function(response) {
+        onload: function (response) {
             var s = document.createElement('script');
             s.type = 'text/javascript';
             s.innerHTML = response.responseText;

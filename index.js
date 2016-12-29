@@ -1,4 +1,4 @@
-const $ = require('jquery');
+//const $ = require('jquery');
 const utils = require('./utils');
 const titleHiders = require('./titleHiders');
 const redditUtils = require('./redditUtils');

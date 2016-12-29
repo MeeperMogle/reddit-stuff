@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         MyUserscript
+// @name         Reddit stuff
 // @namespace    example.com
 // @version      1.0
-// @description  This is my new userscript
-// @author       You
-// @match        *://*/*
+// @author       Mogle
+// @match        http*://*.reddit.com/*
 // @noframes
 // @grant        none
+// @require    https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
