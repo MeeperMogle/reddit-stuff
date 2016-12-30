@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './index.js',
+    entry: './src/index.js',
     devServer: {
         contentBase: __dirname
     },
