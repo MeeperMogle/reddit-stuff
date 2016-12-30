@@ -1,4 +1,3 @@
-//const $ = require('jquery');
 const utils = require('./utils');
 const titleHiders = require('./titleHiders');
 const redditUtils = require('./redditUtils');
@@ -23,8 +22,8 @@ redditUtils.opacityDown();
 
 if (isAt('w68')) {
     // Remove duplicate image links
-    setTimeout(function () {
-        $('.expando-button-duplicate').each(function () {
+    setTimeout(() => {
+        $('.expando-button-duplicate').each(function hideDupes() {
             parentN($(this), 2).hide();
         });
     }, 2000);

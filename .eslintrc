@@ -5,5 +5,14 @@
        "indent": ["error", 4],
        "no-alert": "off",
        "no-console": "off",
+       "arrow-parens": ["error", "as-needed"],
+       "camelcase": "off"
+    },
+    "globals": {
+        "$": true,
+        "GM_addStyle": true,
+        "PRO_addStyle": true,
+        "addStyle": true,
+        "document": true
     }
 }
