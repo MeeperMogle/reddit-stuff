@@ -12,6 +12,11 @@ module.exports = {
             });
         });
     },
+    hideImageDuplicateTopics() {
+        $('.expando-button-duplicate').each(function hideDupes() {
+            utils.parentN($(this), 2).hide();
+        });
+    },
     hideElements() {
         const elementSelectors = ['.score', '.userkarma', '.karma', '.del-button'];
         $(elementSelectors.join(', ')).hide();

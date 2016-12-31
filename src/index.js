@@ -22,7 +22,7 @@ redditUtils.formatTimestamps();
 subredditIcons.initiateIcons();
 redditUtils.opacityDown();
 
-// In any thread thread
+// In any thread
 if (isAt('/comments/')) {
     topic.hideAndShadowbanUsers();
     setInterval(function () {
@@ -31,29 +31,34 @@ if (isAt('/comments/')) {
 
     topic.rootSeparator();
 } else { // Not in any thread
+    // On the w68 multi
     if (isAt('w68')) {
         // Remove duplicate image links
         setTimeout(() => {
-            $('.expando-button-duplicate').each(function hideDupes() {
-                parentN($(this), 2).hide();
-            });
+            redditUtils.hideImageDuplicateTopics();
         }, 2000);
 
         hideAllTopics(titleHiders.w68);
     }
 }
 
-// debug closing reasons
+// NO PARTICIPATION
 // custom no-contribution subreddits
-// native no-contributions-enforcement
-// nc: no replies, no voting, no reporting, ...
+// no-contributions-enforcement
+// - no replies, no voting, no reporting, ...
+
+// ERROR CODES
 // error code: 50       refresh interval
-// hide comments containing certain word
-// hide comment trees of deleted / removed comments?
+
+// UNFRUITFUL DISCUSSIONS
+// hide comments, and trees, containing certain phrases
+
+// OLD TOPICS
 // remove "reply"-links to comments > 1 day
 // remove reply-textbox in threads > 1 day
-// completely remove Ignored users' posts and topics
-// - personal shadowbanner; localStorage
-// - when seeing an Ignored user, add it if necessary
+
+// PERSONAL SHADOWBANNER
+// completely remove Ignored users' posts and topics [X]
+// - personal shadowbanner; localStorage [X]
+// - when seeing an Ignored user, add it if necessary [X]
 // - export as csv, insert as csv
-// subreddit: auto-set filter options
