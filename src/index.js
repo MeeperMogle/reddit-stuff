@@ -24,13 +24,12 @@ redditUtils.opacityDown();
 
 // In any thread thread
 if (isAt('/comments/')) {
-    topic.rootSeparator();
+    topic.hideAndShadowbanUsers();
     setInterval(function () {
-        topic.hideTheseUserComments(shadowbanner.getShadowbannedNames(), true);
-        topic.personallyShadowbanTheseUsers(
-            topic.getIgnoredUsernames()
-        );
+        topic.hideAndShadowbanUsers();
     }, 500);
+
+    topic.rootSeparator();
 } else { // Not in any thread
     if (isAt('w68')) {
         // Remove duplicate image links
