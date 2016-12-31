@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Reddit stuff
-// @namespace    example.com
+// @namespace    https://github.com/MeeperMogle/reddit-stuff
 // @version      1.0
 // @author       Mogle
 // @match        http*://*.reddit.com/*
 // @noframes
 // @grant        none
-// @require    https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
