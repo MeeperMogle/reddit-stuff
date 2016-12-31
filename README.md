@@ -1,5 +1,28 @@
-# webpack-userscript
-Template for a Tempermonkey/Greasemonkey userscript using webpack
+# Reddit stuff
+Personal project of added userscript functionality to Reddit. Customisable currently only direct in source code. Some functionality assumes Reddit Enhancement Suite (RES) is installed in the browser.
+
+Development environment based on freund17 `webpack-userscript` dev-server (https://github.com/freund17/webpack-userscript)
+
+Features include
+- Changing links to point to /new
+- Toggle right sidebar with §
+- Hide elements on the page
+- Lowered opacity of elements on the page
+- Formatted timestamp to show time in UTC
+- Red lines separating root-comments in threads
+- Hide topics based on name, globally and per subreddit
+- Hide topics which link to duplicate images
+- Append custom icons to /r/subreddit links for easy spotting
+- Personal shadowbanner; completely hide the discussions created by ignored users
+
+Planned features
+
+- Forced adherence to no-participation links
+- Custom, automatically, no-participation subreddits
+- Periodic refreshes/other handling of Reddit error codes
+- Hide comments containing certain phrases, such as "3edgy5me"
+- Disable posting/replying when the parent is 24h or older
+- Visual adjusting of personal shadowbanner list
 
 
 How to setup a development environment?
@@ -8,15 +31,11 @@ How to setup a development environment?
 1. Make sure a recent version of nodejs and npm is installed on your system (https://nodejs.org)  
     Under linux you will most likely as well need to add a symlink in /usr/bin: node -> nodejs (`sudo ln -s /usr/bin/nodejs /usr/bin/node`)  
     Or add the bin-folder to your PATH
-2. Install webpack: `npm install -g webpack` (you'll need sudo)
-3. Install webpack-dev-server: `npm install -g webpack-dev-server` (you'll need sudo)
-4. Install sass
-    1. Install ruby
-        1. Windows: use the ruby installer (http://rubyinstaller.org/)
-        2. Linux: `sudo apt-get install ruby`
-    2. use gem (ruby's package manager) to install sass: `gem install sass` (you'll need sudo)
-5. Load Modules with `npm install`
-6. Install the devLoader.user.js userscript  
+2. Install Ruby
+    1. Windows: use the ruby installer (http://rubyinstaller.org/)
+    2. Linux: `sudo apt-get install ruby`
+3. Launch "getSetup.sh" (Linux) / "getSetup.sh" (Windows)
+4. Install the "devLoader.user.js" userscript into Tampermonkey/Greasemonkey in your browser
     Change @match to fit your page
 
 How do I start developing?
@@ -24,7 +43,7 @@ How do I start developing?
 
 1. Launch "startDevServer.sh" (Linux) / "startDevServer.bat" (Windows)
 2. Wait for the message: "bundle is now VALID"
-3. refresh page
+3. Refresh the page in the browser to see the result
 4. After changing a file restart from step 2
 
 How do I pack my userscript for distribution?
@@ -32,7 +51,7 @@ How do I pack my userscript for distribution?
 
 1. Edit userscript.txt to fit your needs
 2. Launch "pack.sh" (Linux) / "pack.bat" (Windows)
-3. Your userscript is bundle.user.js
+3. Your userscript will be a single file with the name "bundle.user.js"
 
 
 Troubleshooting
