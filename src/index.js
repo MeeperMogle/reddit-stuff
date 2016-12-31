@@ -3,6 +3,7 @@ const titleHiders = require('./titleHiders');
 const redditUtils = require('./redditUtils');
 const sidebar = require('./sidebar');
 const subredditIcons = require('./subredditIcons');
+const topic = require('./topic');
 
 const isAt = utils.isAt;
 const parentN = utils.parentN;
@@ -20,15 +21,20 @@ redditUtils.formatTimestamps();
 subredditIcons.initiateIcons();
 redditUtils.opacityDown();
 
-if (isAt('w68')) {
-    // Remove duplicate image links
-    setTimeout(() => {
-        $('.expando-button-duplicate').each(function hideDupes() {
-            parentN($(this), 2).hide();
-        });
-    }, 2000);
+// In any thread thread
+if (isAt('/comments/')) {
+    topic.rootSeparator();
+} else { // Not in any thread
+    if (isAt('w68')) {
+        // Remove duplicate image links
+        setTimeout(() => {
+            $('.expando-button-duplicate').each(function hideDupes() {
+                parentN($(this), 2).hide();
+            });
+        }, 2000);
 
-    hideAllTopics(titleHiders.w68);
+        hideAllTopics(titleHiders.w68);
+    }
 }
 
 // debug closing reasons
