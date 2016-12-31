@@ -4,6 +4,7 @@ const redditUtils = require('./redditUtils');
 const sidebar = require('./sidebar');
 const subredditIcons = require('./subredditIcons');
 const topic = require('./topic');
+const shadowbanner = require('./shadowbanner');
 
 const isAt = utils.isAt;
 const parentN = utils.parentN;
@@ -24,6 +25,12 @@ redditUtils.opacityDown();
 // In any thread thread
 if (isAt('/comments/')) {
     topic.rootSeparator();
+    setInterval(function () {
+        topic.hideTheseUserComments(shadowbanner.getShadowbannedNames(), true);
+        topic.personallyShadowbanTheseUsers(
+            topic.getIgnoredUsernames()
+        );
+    }, 500);
 } else { // Not in any thread
     if (isAt('w68')) {
         // Remove duplicate image links
