@@ -4,19 +4,15 @@ const redditUtils = require('./redditUtils');
 const sidebar = require('./sidebar');
 const subredditIcons = require('./subredditIcons');
 const topic = require('./topic');
+const sidenav = require('./sidenav');
 
 const isAt = utils.isAt;
-const hideAllTopics = redditUtils.hideAllTopics;
-
-// Menu-around actions (export to sidenav.js)
-$('a[href="/me/m/w68/"]').attr('href', '/me/m/w68/new/');
 
 // Actions on all pages
-hideAllTopics(titleHiders.all);
+sidenav.linksToSlashNew();
 sidebar.initiateToggle();
 redditUtils.hideElements();
 redditUtils.formatTimestamps();
-subredditIcons.initiateIcons();
 redditUtils.opacityDown();
 
 // In any thread
@@ -28,6 +24,12 @@ if (isAt('/comments/')) {
 
     topic.rootSeparator();
 } else { // Not in any thread
+    // On every frontpage...
+    // ... hide globally hidden topics
+    redditUtils.hideAllTopics(titleHiders.all);
+    // ... initiate custom icons
+    subredditIcons.initiateIcons();
+
     // On the w68 multi
     if (isAt('w68')) {
         // Remove duplicate image links
@@ -35,7 +37,7 @@ if (isAt('/comments/')) {
             redditUtils.hideImageDuplicateTopics();
         }, 2000);
 
-        hideAllTopics(titleHiders.w68);
+        redditUtils.hideAllTopics(titleHiders.w68);
     }
 }
 

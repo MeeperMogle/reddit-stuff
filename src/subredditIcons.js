@@ -1,19 +1,17 @@
 module.exports = {
     initiateIcons() {
+        // Add the specified icon after links to /r/subreddit
         const icons = [
             {
                 subreddit: 'cynicalbritofficial',
-                class: 'cynicalbrit',
                 iconUrl: 'http://i.imgur.com/RQNQJlp.png',
             },
             {
                 subreddit: 'technology',
-                class: 'technologyReddit',
                 iconUrl: 'http://i.imgur.com/5ERrWVv.png',
             },
             {
                 subreddit: 'Games',
-                class: 'gamesReddit',
                 iconUrl: 'http://i.imgur.com/qqbE3NA.png',
             },
         ];
@@ -21,9 +19,9 @@ module.exports = {
         let styles = '<style>';
 
         icons.forEach(icon => {
-            $(`a.subreddit:contains(${icon.subreddit})`).addClass(icon.class);
+            $(`a.subreddit:contains(${icon.subreddit})`).addClass(`${icon.subreddit}CustomIcon`);
 
-            styles += `.${icon.class}:after {content:url("${icon.iconUrl}");} `;
+            styles += `.${icon.subreddit}CustomIcon:after {content:url("${icon.iconUrl}");} `;
         });
 
         $('head').append(`${styles} </style>`);
