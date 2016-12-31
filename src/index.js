@@ -4,11 +4,8 @@ const redditUtils = require('./redditUtils');
 const sidebar = require('./sidebar');
 const subredditIcons = require('./subredditIcons');
 const topic = require('./topic');
-const shadowbanner = require('./shadowbanner');
 
 const isAt = utils.isAt;
-const parentN = utils.parentN;
-const findParentElement = utils.findParentElement;
 const hideAllTopics = redditUtils.hideAllTopics;
 
 // Menu-around actions (export to sidenav.js)
@@ -25,7 +22,7 @@ redditUtils.opacityDown();
 // In any thread
 if (isAt('/comments/')) {
     topic.hideAndShadowbanUsers();
-    setInterval(function () {
+    setInterval(() => {
         topic.hideAndShadowbanUsers();
     }, 500);
 

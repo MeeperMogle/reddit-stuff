@@ -29,7 +29,5 @@ topicExports.getIgnoredUsernames = function () {
 
 topicExports.hideAndShadowbanUsers = function () {
     topicExports.hideTheseUserComments(shadowbanner.getShadowbannedNames(), true);
-    topicExports.personallyShadowbanTheseUsers(
-        topicExports.getIgnoredUsernames()
-    );
+    topicExports.personallyShadowbanTheseUsers(topicExports.getIgnoredUsernames());
 };

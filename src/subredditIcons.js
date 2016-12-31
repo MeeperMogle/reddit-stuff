@@ -26,6 +26,6 @@ module.exports = {
             styles += `.${icon.class}:after {content:url("${icon.iconUrl}");} `;
         });
 
-        $('head').append(styles + '</style>')
+        $('head').append(`${styles} </style>`);
     },
 };
