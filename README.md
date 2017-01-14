@@ -25,6 +25,10 @@ Planned features
 - Visual adjusting of personal shadowbanner list
 
 
+Specific, personal titles to hide
+
+For the script to run with personalised titles to hide, a file `src/titleHiders.js` needs to be added, with `modules.exports` of an object which has keys that points to arrays. Example: `module.exports = {something: ['unwanted', 'titles']};`
+
 How to setup a development environment?
 =======================================
 
