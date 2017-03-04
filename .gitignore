@@ -2,3 +2,4 @@ node_modules/*
 bundle.user.js
 bundle.js
 /src/titleHiders.js
+/src/commentBlocks.js

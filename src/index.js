@@ -1,5 +1,6 @@
 const utils = require('./utils');
 const titleHiders = require('./titleHiders');
+const commentBlockers = require('./commentBlocks');
 const redditUtils = require('./redditUtils');
 const sidebar = require('./sidebar');
 const subredditIcons = require('./subredditIcons');
@@ -17,12 +18,16 @@ redditUtils.opacityDown();
 
 // In any thread
 if (isAt('/comments/')) {
+    topic.blockRootCommentIfOnAnyOfTheseSubreddits(commentBlockers.root);
+    topic.blockAnyCommentIfOnAnyOfTheseSubreddits(commentBlockers.all);
+
     topic.hideAndShadowbanUsers();
     setInterval(() => {
         topic.hideAndShadowbanUsers();
     }, 500);
 
     topic.rootSeparator();
+
 } else { // Not in any thread
     // On every frontpage...
     // ... hide globally hidden topics

@@ -14,6 +14,7 @@ Features include
 - Hide topics which link to duplicate images
 - Append custom icons to /r/subreddit links for easy spotting
 - Personal shadowbanner; completely hide the discussions created by ignored users
+- Turn off your own ability to make root-comments (or any comment) in subreddits of your choice
 
 Planned features
 

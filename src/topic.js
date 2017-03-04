@@ -1,4 +1,5 @@
 const shadowbanner = require('./shadowbanner');
+const utils = require('./utils');
 
 const topicExports = module.exports = {};
 
@@ -30,4 +31,20 @@ topicExports.getIgnoredUsernames = function () {
 topicExports.hideAndShadowbanUsers = function () {
     topicExports.hideTheseUserComments(shadowbanner.getShadowbannedNames(), true);
     topicExports.personallyShadowbanTheseUsers(topicExports.getIgnoredUsernames());
+};
+
+topicExports.blockRootCommentIfOnAnyOfTheseSubreddits = function (listArray) {
+    listArray.forEach(subreddit => {
+        if (top.location.href.toString().toLowerCase().includes('/r/' + subreddit.toLowerCase())) {
+            $('.commentarea > form.usertext').hide();
+        }
+    });
+};
+
+topicExports.blockAnyCommentIfOnAnyOfTheseSubreddits = function (listArray) {
+    listArray.forEach(subreddit => {
+        if (top.location.href.toString().toLowerCase().includes('/r/' + subreddit.toLowerCase())) {
+            $('.commentarea > form.usertext, .reply-button').remove();
+        }
+    });
 };
