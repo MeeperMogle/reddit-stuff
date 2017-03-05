@@ -14,7 +14,7 @@ module.exports = {
     },
     hideImageDuplicateTopics() {
         $('.expando-button-duplicate').each(function hideDupes() {
-            utils.parentN($(this), 2).hide();
+            utils.parentN($(this), 2).remove();
         });
     },
     hideElements() {

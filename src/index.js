@@ -37,10 +37,12 @@ if (isAt('/comments/')) {
 
     // On the w68 multi
     if (isAt('w68')) {
+        redditUtils.hideImageDuplicateTopics();
+
         // Remove duplicate image links
-        setTimeout(() => {
+        setInterval(() => {
             redditUtils.hideImageDuplicateTopics();
-        }, 2000);
+        }, 5000);
 
         redditUtils.hideAllTopics(titleHiders.w68);
     }
