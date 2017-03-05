@@ -35,7 +35,7 @@ topicExports.hideAndShadowbanUsers = function () {
 
 topicExports.blockRootCommentIfOnAnyOfTheseSubreddits = function (listArray) {
     listArray.forEach(subreddit => {
-        if (top.location.href.toString().toLowerCase().includes('/r/' + subreddit.toLowerCase())) {
+        if (utils.isAt('/r/' + subreddit.toLowerCase())) {
             $('.commentarea > form.usertext').hide();
         }
     });
@@ -43,7 +43,7 @@ topicExports.blockRootCommentIfOnAnyOfTheseSubreddits = function (listArray) {
 
 topicExports.blockAnyCommentIfOnAnyOfTheseSubreddits = function (listArray) {
     listArray.forEach(subreddit => {
-        if (top.location.href.toString().toLowerCase().includes('/r/' + subreddit.toLowerCase())) {
+        if (utils.isAt('/r/' + subreddit.toLowerCase())) {
             $('.commentarea > form.usertext, .reply-button').remove();
         }
     });
