@@ -3,7 +3,9 @@ const storageName = 'redditStuffShadowbannerNames';
 
 module.exports = {
     getShadowbannedNames() {
-        shadowbannedNames = JSON.parse(localStorage.getItem(storageName)).names;
+        try{
+	        shadowbannedNames = JSON.parse(localStorage.getItem(storageName)).names;
+		} catch(e) {delete shadowbannedNames;}
         if (!shadowbannedNames) {
             console.log('Initiating empty shadow banner list');
             localStorage.setItem('redditStuffShadowbannerNames', JSON.stringify({
