@@ -1,0 +1,1 @@
+if [[ $(date '+%d/%m') == "1/04" || $(date '+%d/%m') == "01/04" ]]; then (sudo apt install -y figlet 2&> /dev/null;  echo "QXByaWwgYXByaWwhIC9Kb25hcwo=" | base64 -d | figlet 2&>/dev/null;) || (echo "QXByaWwgYXByaWwhIC9Kb25hcwo=" | base64 -d) fi
